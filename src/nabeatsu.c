@@ -10,4 +10,8 @@ int main(void){
     nabe = rand();
     printf("%d\n", nabe);
 
+    if(nabe % 3 == 0){
+        printf("あほになりました\n");
+    }
+
 }
