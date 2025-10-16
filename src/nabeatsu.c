@@ -8,7 +8,7 @@ int main(void){
     char str[256];
     srand((unsigned int)(time(NULL)));
 
-    nabe = 33333333;
+    nabe = rand();
     printf("%d\n", nabe);
 
     if(nabe % 3 == 0){
