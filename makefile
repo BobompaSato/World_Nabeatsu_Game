@@ -1,1 +1,0 @@
-all: gcc nabeatsu.c -o bin/nabe
