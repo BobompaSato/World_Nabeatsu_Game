@@ -4,11 +4,11 @@
 
 int main(void){
 
-    int nabe, i;
+    int nabe, i, count;
     char str[256];
     srand((unsigned int)(time(NULL)));
 
-    nabe = 36;
+    nabe = 33333333;
     printf("%d\n", nabe);
 
     if(nabe % 3 == 0){
@@ -21,6 +21,10 @@ int main(void){
     for(i = 0; i < 10; i++){
         if('3' == str[i]){
             printf("あほになりました(数値の中に3が含まれています)\n");
+            count = 1;
+            if(count == 1){
+                break;
+            }
         }
     }
 
