@@ -6,25 +6,37 @@
 
 */
 
+int judge_nabe();
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 int main(void){
 
-    int nabe, i, count;
-    char str[256];
+    int number;
     srand((unsigned int)(time(NULL)));
 
-    nabe = rand();
+    printf("数値を整数で入力してください:\n");
+    scanf("%d", &number);
+
+    int nabe = judge_nabe(number);
     printf("%d\n", nabe);
 
-    if(nabe % 3 == 0){
+
+}
+
+int judge_nabe(int number){
+
+    int i, count;
+    char str[256];
+
+    if(number % 3 == 0){
         printf("あほになりました(3の倍数です)\n");
     }
 
     //数値を文字列に変換
-    sprintf(str, "%d", nabe);
+    sprintf(str, "%d", number);
 
     for(i = 0; i < 10; i++){
         if('3' == str[i]){
