@@ -6,11 +6,11 @@
 
 */
 
-int judge_nabe();
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+int judge_nabe();
 
 int main(void){
 
