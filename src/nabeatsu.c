@@ -8,44 +8,41 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <string.h>
 
-int judge_nabe();
+void judge_nabe(int number);
 
 int main(void){
 
-    int number;
-    srand((unsigned int)(time(NULL)));
+    int number = 0;
 
     printf("数値を整数で入力してください:\n");
     scanf("%d", &number);
 
-    int nabe = judge_nabe(number);
-    printf("%d\n", nabe);
+    judge_nabe(number);
 
+    return 0;
 
 }
 
-int judge_nabe(int number){
+void judge_nabe(int number){
 
-    int i, count;
+    int i;
     char str[256];
+    int aho_flag = 0;
 
     if(number % 3 == 0){
-        printf("あほになりました(3の倍数です)\n");
+        aho_flag = 1;
     }
 
-    //数値を文字列に変換
     sprintf(str, "%d", number);
+    //(strchrは文字が見つかればその場所を、見つからなければNULLを返す)
+    if(strchr(str, '3') != NULL){
+        aho_flag = 1;
+    }
 
-    for(i = 0; i < 10; i++){
-        if('3' == str[i]){
-            printf("あほになりました(数値の中に3が含まれています)\n");
-            count = 1;
-            if(count == 1){
-                break;
-            }
-        }
+    if(aho_flag == 1){
+        printf("あほになりました！\n");
     }
 
 }
