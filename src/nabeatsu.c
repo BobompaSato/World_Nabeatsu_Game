@@ -4,20 +4,26 @@
 ・5の倍数の時に犬っぽくなる
 ・8の倍数の時に人探しをしている感じになる
 
-*/
+======================================*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 void judge_nabe(int number);
 
 int main(void){
 
     int number = 0;
+    char scan[0];
+    srand((unsigned int)time(NULL));
 
-    printf("数値を整数で入力してください:\n");
-    scanf("%d", &number);
+    number = rand();
+    printf("%d\n", number);
+
+    printf("上記の数値はあほになりますか？[y/n]:");
+    scanf("%s", scan);
 
     judge_nabe(number);
 
@@ -35,6 +41,7 @@ void judge_nabe(int number){
         aho_flag = 1;
     }
 
+    //数字を文字列に変換
     sprintf(str, "%d", number);
     //(strchrは文字が見つかればその場所を、見つからなければNULLを返す)
     if(strchr(str, '3') != NULL){
